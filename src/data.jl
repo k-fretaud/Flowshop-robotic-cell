@@ -5,6 +5,12 @@
 # Authors: Killian Fretaud, Rémi Garcia,
 #-------------------------------------------------------------------------------
 
+"""
+    data()
+
+Return 2 lists of instances used for tests. The second list has a constant
+travel time.
+"""
 function data()
     P2_2 = [1 4; 3 2]
     P2_3 = [1 4 2; 3 2 1]

@@ -24,8 +24,13 @@ mutable struct Solution
     robot::Robot
 end
 
+"""
+    solve_to_represent(instance::Instance, z::Float64, sol::ModelVars)
 
-function solve_to_represent(instance::Instance, z, sol)
+Returns a solution converted from the instance and the model after optimization
+into an structure easier to use for outputs.
+"""
+function solve_to_represent(instance::Instance, z::Float64, sol::ModelVars)
     m = instance.nb_machines
     n = instance.nb_jobs
 
@@ -72,7 +77,11 @@ function solve_to_represent(instance::Instance, z, sol)
     return Solution(round(Int, z), jobs_ordered, machines, Robot(moves, st, instance.travel_times))
 end
 
+"""
+    print_solution(solution::Solution)
 
+Prints `solution` in a human friendly form.
+"""
 function print_solution(solution::Solution)
     println("\t= Solution is =============================================")
     println("\tCmax = ", solution.C_max)
